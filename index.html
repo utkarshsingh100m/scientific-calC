@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Scientific Calculator by UTKARSH</title>
+		<meta
+			name="description"
+			content="A modern, feature-rich scientific calculator with glassmorphic design and calculation history"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="calculator.css"
+		/>
+	</head>
+	<body>
+		<div class="background-animation"></div>
+
+		<div class="container">
+			<header>
+				<h1>Scientific Calculator</h1>
+				<p class="author">by UTKARSH</p>
+			</header>
+
+			<div class="calculator-wrapper">
+				<div class="calculator">
+					<div class="display-container">
+						<div
+							class="expression"
+							id="expression"
+						></div>
+						<div
+							class="display"
+							id="display"
+						>
+							0
+						</div>
+					</div>
+
+					<div class="buttons-grid">
+						<!-- Row 1: Scientific Functions -->
+						<button
+							class="btn btn-function"
+							data-action="sin"
+						>
+							sin
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="cos"
+						>
+							cos
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="tan"
+						>
+							tan
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="log"
+						>
+							log
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="ln"
+						>
+							ln
+						</button>
+
+						<!-- Row 2: More Functions -->
+						<button
+							class="btn btn-function"
+							data-action="sqrt"
+						>
+							√
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="square"
+						>
+							x²
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="cube"
+						>
+							x³
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="power"
+						>
+							xʸ
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="factorial"
+						>
+							x!
+						</button>
+
+						<!-- Row 3: Constants & Special -->
+						<button
+							class="btn btn-function"
+							data-action="pi"
+						>
+							π
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="e"
+						>
+							e
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="("
+						>
+							(
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action=")"
+						>
+							)
+						</button>
+						<button
+							class="btn btn-clear"
+							data-action="clear"
+						>
+							C
+						</button>
+
+						<!-- Row 4: Numbers & Operators -->
+						<button
+							class="btn btn-number"
+							data-value="7"
+						>
+							7
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="8"
+						>
+							8
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="9"
+						>
+							9
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="/"
+						>
+							÷
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="backspace"
+						>
+							⌫
+						</button>
+
+						<!-- Row 5 -->
+						<button
+							class="btn btn-number"
+							data-value="4"
+						>
+							4
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="5"
+						>
+							5
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="6"
+						>
+							6
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="*"
+						>
+							×
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="%"
+						>
+							%
+						</button>
+
+						<!-- Row 6 -->
+						<button
+							class="btn btn-number"
+							data-value="1"
+						>
+							1
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="2"
+						>
+							2
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="3"
+						>
+							3
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="-"
+						>
+							−
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="negate"
+						>
+							±
+						</button>
+
+						<!-- Row 7 -->
+						<button
+							class="btn btn-number"
+							data-value="0"
+						>
+							0
+						</button>
+						<button
+							class="btn btn-number"
+							data-value="."
+						>
+							.
+						</button>
+						<button
+							class="btn btn-equals"
+							data-action="="
+						>
+							=
+						</button>
+						<button
+							class="btn btn-operator"
+							data-action="+"
+						>
+							+
+						</button>
+						<button
+							class="btn btn-function"
+							data-action="ans"
+						>
+							Ans
+						</button>
+					</div>
+				</div>
+
+				<div class="history-panel">
+					<div class="history-header">
+						<h2>History</h2>
+						<button
+							class="btn-clear-history"
+							id="clearHistory"
+						>
+							Clear
+						</button>
+					</div>
+					<div
+						class="history-list"
+						id="historyList"
+					>
+						<p class="history-empty">No calculations yet</p>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<p>
+					Use keyboard for quick input • Press Escape to clear • Enter to
+					calculate
+				</p>
+			</footer>
+		</div>
+
+		<script src="calculator.js"></script>
+	</body>
+</html>
